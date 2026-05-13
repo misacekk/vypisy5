@@ -100,3 +100,52 @@ public class Main {
         }
     }
 }
+
+//Příklad 5
+//Škola – hluboké vnořování, atributy, statistiky
+//
+//Struktura XML
+//Soubor skola.xml obsahuje třídy s žáky, každý žák má seznam předmětů se známkami. Třídy a
+//škola jsou identifikovány XML atributy (nazev).
+//&lt;skola nazev=&quot;Gymnazium Praha&quot;&gt;
+//&lt;trida nazev=&quot;3A&quot;&gt;
+//&lt;zak&gt;
+//&lt;jmeno&gt;Petr Novak&lt;/jmeno&gt;
+//&lt;predmety&gt;
+//&lt;predmet&gt;
+//&lt;nazev&gt;Matematika&lt;/nazev&gt;
+//&lt;znamka&gt;1&lt;/znamka&gt;
+//&lt;/predmet&gt;
+//&lt;!-- další předměty... --&gt;
+//&lt;/predmety&gt;
+//&lt;/zak&gt;
+//&lt;!-- další žáci... --&gt;
+//&lt;/trida&gt;
+//&lt;!-- další třídy... --&gt;
+//&lt;/skola&gt;
+//
+//Úkoly
+//1. Třídy Predmet a Zak: Vytvořte třídy Predmet (nazev, znamka) a Zak (jmeno, nazevTridy,
+//List&lt;Predmet&gt;). Implementujte konstruktory, gettery a toString().
+//2. Načtení dat: Načtěte soubor skola.xml. Pro každou třídu (element &lt;trida&gt;) přečtěte XML
+//atribut nazev pomocí getAttribute(&quot;nazev&quot;). Pro každého žáka načtěte jeho předměty a
+//uložte vše do List&lt;Zak&gt;.
+//3. Průměry žáků: Pro každého žáka vypočítejte průměr jeho známek a vypište:
+//[3A] Petr Novak – prumer: 1.33
+//4. Nejlepší žák: Najděte nejlepšího žáka celé školy (nejnižší průměr). Vypište jeho jméno,
+//třídu a průměr.
+//5. Žáci s pětkou: Vypište všechny žáky, kteří mají alespoň jednu pětku. Pokud žádný takový
+//žák neexistuje, vypište &quot;Nikdo nema petku.&quot;.
+//6. Statistika předmětu: Z klávesnice načtěte název předmětu (např. Matematika).
+//Vypočítejte a vypište průměrnou známku z tohoto předmětu pro všechny žáky školy. Pokud
+//předmět v datech není, vyhoďte vlastní výjimku PredmetNotFoundException.
+//
+//Nápověda – čtení XML atributů
+/// / Čtení atributu elementu:
+//Element trida = (Element) tridyList.item(i);
+//String nazevTridy = trida.getAttribute(&quot;nazev&quot;);
+//
+//Procvičení: Práce se soubory XML v Javě • Příklad 5
+//// Pozor: getElementsByTagName prohledává celý podstrom,
+//// takže autor.getElementsByTagName(&quot;nazev&quot;) vrátí jen
+//// elementy &lt;nazev&gt; uvnitř daného autora/třídy.
